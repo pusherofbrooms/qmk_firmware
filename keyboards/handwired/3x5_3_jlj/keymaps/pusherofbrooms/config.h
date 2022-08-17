@@ -1,9 +1,9 @@
 #pragma once
 
 // handedness in eeprom:
-// make handwired/3x5_3_jlj:default:avrdude-split-right
+// make handwired/3x5_3_jlj:pusherofbrooms:avrdude-split-right
 // and
-// make handwired/3x5_3_jlj:default:avrdude-split-left
+// make handwired/3x5_3_jlj:pusherofbrooms:avrdude-split-left
 #define EE_HANDS
 
 // We use home row mods
