@@ -15,3 +15,6 @@
 
 // default tapping term is 200ms
 // #define TAPPING_TERM 200
+
+// combos
+#define COMBO_COUNT 3

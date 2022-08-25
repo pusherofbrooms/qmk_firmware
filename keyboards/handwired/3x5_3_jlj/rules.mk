@@ -21,6 +21,6 @@ LAYOUTS = split_3x5_3
 SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no 
 MAGIC_ENABLE = no
-
+COMBO_ENABLE = yes
 # link time optimization
 LTO_ENABLE = yes
