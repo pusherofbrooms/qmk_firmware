@@ -5,17 +5,26 @@
 enum combos {
   QW_ESC,
   AS_TAB,
-  ZX_CAPS
+  ZX_CAPS,
+  OP_BSLS,
+  LSCLN_QUOT,
+  DOTSLSH_MINS
 };
 
 const uint16_t PROGMEM qw_combo[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM as_combo[] = {LGUI_T(KC_A), LALT_T(KC_S), COMBO_END};
 const uint16_t PROGMEM zx_combo[] = {KC_Z, KC_X, COMBO_END};
+const uint16_t PROGMEM op_combo[] = {KC_O, KC_P, COMBO_END};
+const uint16_t PROGMEM lscln_combo[] = {RALT_T(KC_L), RGUI_T(KC_SCLN), COMBO_END};
+const uint16_t PROGMEM dotslsh_combo[] = {KC_DOT, KC_SLSH, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [QW_ESC] = COMBO(qw_combo, KC_ESC),
   [AS_TAB] = COMBO(as_combo, KC_TAB),
   [ZX_CAPS] = COMBO(zx_combo, KC_CAPS),
+  [OP_BSLS] = COMBO(op_combo, KC_BSLS),
+  [LSCLN_QUOT] = COMBO(lscln_combo, KC_QUOT),
+  [DOTSLSH_MINS] = COMBO(dotslsh_combo, KC_MINS),
 };
 
 // layers
@@ -30,10 +39,10 @@ enum layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DEFAULT] = LAYOUT_split_3x5_3
-  (KC_Q,            KC_W,          KC_E,          KC_R,          KC_T,         KC_Y,       KC_U,         KC_I,         KC_O,         KC_P,
-   LGUI_T(KC_A),    LALT_T(KC_S),  LCTL_T(KC_D),  LSFT_T(KC_F),  KC_G,         KC_H,       RSFT_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), RGUI_T(KC_SCLN),
-   KC_Z,            KC_X,          KC_C,          KC_V,          KC_B,         KC_N,       KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,
-                                   LT(_LOWER, KC_ESC),  KC_BSPC,       LT(_MOUSE, KC_SPC),       KC_SPC,     KC_ENT,       LT(_RAISE, KC_TAB)),
+  (KC_Q,            KC_W,          KC_E,         KC_R,                KC_T,               KC_Y,       KC_U,                     KC_I,         KC_O,         KC_P,
+   LGUI_T(KC_A),    LALT_T(KC_S),  LCTL_T(KC_D), LSFT_T(KC_F),        KC_G,               KC_H,       RSFT_T(KC_J),             RCTL_T(KC_K), RALT_T(KC_L), RGUI_T(KC_SCLN),
+   KC_Z,            KC_X,          KC_C,         KC_V,                KC_B,               KC_N,       KC_M,                     KC_COMM,      KC_DOT,       KC_SLSH,
+                                   KC_NO,        LT(_LOWER, KC_BSPC), LT(_MOUSE, KC_SPC), KC_SPC,     LT(_RAISE, KC_ENT),       KC_NO),
 
   [_LOWER] = LAYOUT_split_3x5_3
   (KC_F1,           KC_F2,         KC_F3,         KC_F4,         KC_F5,        KC_F6,      KC_F7,        KC_F8,        KC_F9,        KC_BSLS,
